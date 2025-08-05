@@ -1,6 +1,6 @@
 ## 使用Vue开发Office插件
 
-创建项目建议使用`crate vue`进行初始化，并添加Office插件生态支持。在开始前，需要安装yo office
+创建项目建议使用`create vue`进行初始化，并添加Office插件生态支持。在开始前，需要安装yo office
 
 1. **新建Vue项目**：
 
