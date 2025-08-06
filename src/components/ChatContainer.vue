@@ -40,7 +40,7 @@ const clearComments = () => {
 </script>
 
 <template>
-  <!-- <BubbleList :list="list" max-height="90%" /> -->
+  <!-- NAVBAR   -->
    <div class="flex justify-center flex-col w-full">
     <div class="flex ml-2">
       <el-button @click="clearComments"><i class="fas fa-redo-alt"></i></el-button>
@@ -53,6 +53,8 @@ const clearComments = () => {
       <el-tag type="success">通过：{{ successCount }}</el-tag>
     </div>
   </div>
+
+  <!-- Comments Display -->
   <div
     id="comments"
     class="w-full h-[80%] overflow-y-auto p-2 flex flex-col items-center"
@@ -63,6 +65,8 @@ const clearComments = () => {
       :item="comment"
     />
   </div>
+
+  <!-- Interactions -->
   <div class="flex justify-center h-[10%] w-full px-2 mt-5 items-center">
     <p>模型：</p>
     <el-select v-model="model" placeholder="Select" style="width: 50%">
