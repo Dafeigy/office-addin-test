@@ -1,15 +1,26 @@
+<script setup>
+const props = defineProps({
+  item: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
+
 <template>
-  <div class="flex w-full my-2 items-center justify-center">
-    <el-card>
-      <div class="flex items-center">
+  <div class="flex w-full my-2 items-center justify-center bg-indigo-50">
+    <el-card class="w-full">
+      <div class="flex items-center w-full">
         <el-button><i class="fas fa-angle-double-left" /></el-button>
-        <p class="text-xl font-bold px-2">主要问题</p>
+        <p class="text-xl font-bold px-2">
+          {{ item.status === "pass" ? ("通过") : (item.status === "warning" ?"提示":"警告") }}
+        </p>
       </div>
-      <div class="status bg-red-400 w-[100%] h-1 mt-2"></div>
-      <p class="mt-2">生效条款明确，但未涉及需方或业主的主动权。</p>
+      <div class="status bg-red-400 h-1 mt-2" :class="item.status"></div>
+      <p class="mt-2">{{ item.status === "pass" ? ("评审通过") : (item.status === "warning" ?"评审提示":"评审警告") }}：{{ item.result }}</p>
       <template #footer>
         <p class="text-sm text-gray-500">
-          依据：生效条款是否明确？合同生效主动权是否掌握在需方手中？
+        评审规则：{{ item.rule }}
         </p>
       </template>
     </el-card>

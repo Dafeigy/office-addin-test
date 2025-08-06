@@ -29,6 +29,21 @@
   width: 100%;
 }
 
+.warning{
+  background-color: rgb(255, 166, 0);
+}
+
+.fail{
+  background-color: rgba(231, 69, 57, 0.884);
+}
+
+.pass{
+  background-color: rgb(89, 201, 89);
+}
+
+.nopass{
+  background-color: gray;
+}
 .parsebutton {
   width: 75%;
   height: 20%;
