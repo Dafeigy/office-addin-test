@@ -1,27 +1,51 @@
 <script setup>
-    import { ref } from 'vue';
-    const senderValue = ref("");
-    const senderLoading = ref(false);
+import { ref } from "vue";
 
-    function handleSubmit(value) {
-        console.log(value);
-    }
+const value = ref("");
 
-    function handleCancel() {
-        senderLoading.value = false;
-        ElMessage.info(`取消发送`);
-    }
+const options = [
+  {
+    value: "QWen25-72B",
+    label: "QWen25-72B",
+  },
+  {
+    value: "QWen3-32B",
+    label: "QWen25-32B",
+  },
+  {
+    value: "Deepseek-R1-32B",
+    label: "Deepseek-R1-32B",
+  },
+  {
+    value: "Deepseek-R1-671B",
+    label: "Deepseek-R1-671B",
+  },
+];
+
+function searchText(){
+
+}
+function startComments(){
+
+}
 </script>
 
 <template>
-  <!-- <div style="display: flex; flex-direction: column; gap: 12px"> -->
-    <Sender placeholder="有什么可以帮你的呢？" 
-        v-model="senderValue"
-
-        :loading="senderLoading"
-        clearable
-        @submit="handleSubmit"
-        @cancel="handleCancel"
-    />
-  <!-- </div> -->
+  <div class="flex justify-center h-full w-full px-2 mt-5">
+    <p>模型：</p>
+    <el-select v-model="value" placeholder="Select" style="width: 50%">
+      <el-option
+        v-for="item in options"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value"
+      />
+    </el-select>
+    <el-button 
+    type="primary" 
+    class="ml-2 "
+    @click="startComments"
+      ><i class="fas fa-comments"></i
+    >开始审核</el-button>
+  </div>
 </template>

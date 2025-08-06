@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
  /// <reference types="@types/office-js" />
  /// <reference types="@types/office-runtime" />
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { viteStaticCopy } from "vite-plugin-static-copy";
@@ -20,6 +21,7 @@ const _homeDir = homedir();
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     vue(),
     // vueDevTools(), 
     viteStaticCopy({
