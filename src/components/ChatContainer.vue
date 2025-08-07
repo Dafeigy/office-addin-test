@@ -138,9 +138,6 @@ async function SetAnnotation(jsonResponse) {
   <!-- NAVBAR   -->
   <div class="flex justify-center flex-col w-full">
     <div class="flex ml-2">
-      <el-button @click="SetAnnotation(originJsonData)"
-        ><i class="fas fa-search"></i
-      ></el-button>
       <el-button @click="clearComments"
         ><i class="fas fa-redo-alt"></i
       ></el-button>
