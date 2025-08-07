@@ -61,7 +61,7 @@
    清单文件`manifest.xml`将会在第二部输入的`My Office Add-in`项目文件夹中，将它移动到Vue项目的根目录，然后`My Office Add-in`文件夹就可以删除了。在得到Web Add-in的清单文件后，对开发者而言还需要设置运行参数。打开`package.json`，修改`script`中的内容：
 
    ```bash
-   {
+   
      "scripts":{
        "start": "office-addin-debugging start manifest.xml --dev-server vite",
        "start:desktop": "office-addin-debugging start manifest.xml desktop --dev-server vite",
@@ -73,7 +73,7 @@
        "certs:verify": "office-addin-dev-certs verify",
        "certs:uninstall": "office-addin-dev-certs uninstall"
      }
-   }
+   
    ```
 
    然后，修改`vite.config.js`以适配 `vite-plugin-static-copy` 插件复制 `manifest.xml` 进行开发:
@@ -131,6 +131,18 @@
    ```
 
    最后，修改`manifest.xml`文件，主要是替换所有的`localhost:3000`中的端口改为`vite.config.js`中以`devPort`变量定义的端口即可。
+
+
+## Web Add-In 部署
+
+下周写
+
+## TODO
+
+- [ ] 文本搜索优化：官方提供的Office.js的搜索接口可用性极低，~~官方文档不知道叽里咕噜地说什么并且提供的示例较少同时不适配当前业务场景~~，需要另外寻找可行的、可靠的文本定位方法。
+- [ ] 文本段落定位不符预期：接上条，采取本方法对批注部分内容进行文本搜索使用了遍历。当遍历得到的结果似乎有问题，目前的情况是**实际返回的段落ID比理想的段落ID要小**。
+- [ ] 文档补全：预期产出《现代Web框架下的Office插件开发》技术路线文档
+
 
 ## 参考资料
 
