@@ -15,7 +15,8 @@
     "manifest:update-guid": "office-addin-manifest modify manifest.xml --guid",
     "certs:install": "office-addin-dev-certs install ",
     "certs:verify": "office-addin-dev-certs verify",
-    "certs:uninstall": "office-addin-dev-certs uninstall"
+    "certs:uninstall": "office-addin-dev-certs uninstall",
+    "build": "vite build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
